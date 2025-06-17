@@ -1,0 +1,99 @@
+.app-wrapper {
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+}
+
+/* Welcome screen */
+.welcome-screen {
+  text-align: center;
+  padding: 2rem;
+}
+
+.app-header {
+  background-color: #fff;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  color: #3f51b5;
+}
+
+.app-header .brand {
+  color: #673ab7;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Logged-in layout */
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #3f51b5;
+  color: white;
+  padding: 1rem;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.user-info {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.content {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  flex: 1;
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  z-index: 999;
+  font-weight: bold;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; right: 0; }
+  to { opacity: 1; right: 30px; }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; right: 30px; }
+  to { opacity: 0; right: 0; }
+}
+

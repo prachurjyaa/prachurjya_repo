@@ -1,0 +1,38 @@
+<div class="customer-list">
+  <h2>👥 Customer List</h2>
+
+  <!-- Search Bar -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search by name or mobile" />
+
+  <!-- Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of filteredCustomers(); let i = index">
+        <td>{{ i + 1 }}</td>
+        <td *ngIf="!editing[i]">{{ customer.name }}</td>
+        <td *ngIf="editing[i]"><input [(ngModel)]="customer.name" /></td>
+
+        <td *ngIf="!editing[i]">{{ customer.mobile }}</td>
+        <td *ngIf="editing[i]"><input [(ngModel)]="customer.mobile" /></td>
+
+        <td *ngIf="!editing[i]">{{ customer.address }}</td>
+        <td *ngIf="editing[i]"><input [(ngModel)]="customer.address" /></td>
+
+        <td>
+          <button *ngIf="!editing[i]" (click)="editCustomer(i)">✏️ Edit</button>
+          <button *ngIf="editing[i]" (click)="saveCustomer(i)">💾 Save</button>
+          <button (click)="deleteCustomer(i)">🗑️ Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
