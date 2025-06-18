@@ -1,0 +1,29 @@
+<div class="admin-dashboard-container">
+  <h2>Welcome, Admin</h2>
+
+  <div class="card-row">
+    <mat-card class="summary-card">
+      <mat-card-title>Total Customers</mat-card-title>
+      <mat-card-content>{{ totalCustomers }}</mat-card-content>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <mat-card-title>Total Products</mat-card-title>
+      <mat-card-content>{{ totalProducts }}</mat-card-content>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <mat-card-title>Total Sales</mat-card-title>
+      <mat-card-content>₹{{ totalSales }}</mat-card-content>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <mat-card-title>Outstanding Payments</mat-card-title>
+      <mat-card-content>₹{{ totalDue }}</mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="button-row">
+    <button mat-raised-button color="primary" routerLink="/add-customer">Add Customer</button>
+    <button mat-raised-button color="accent" routerLink="/add-product">Add Product</button>
+    <button mat-raised-button color="warn" routerLink="/transactions">Vi

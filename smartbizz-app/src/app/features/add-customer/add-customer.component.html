@@ -1,0 +1,28 @@
+<div class="add-customer-container">
+  <mat-card>
+    <mat-card-title>Add New Customer</mat-card-title>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput name="name" [(ngModel)]="customer.name" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Mobile</mat-label>
+        <input matInput name="mobile" [(ngModel)]="customer.mobile" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Address</mat-label>
+        <input matInput name="address" [(ngModel)]="customer.address" required>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Add</button>
+      </div>
+
+      <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
+    </form>
+  </mat-card>
+</div>

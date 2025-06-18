@@ -1,0 +1,56 @@
+<div class="sales-container">
+  <h2>Make a Sale</h2>
+
+  <mat-card>
+    <mat-card-title>Sale Entry</mat-card-title>
+
+    <div class="form-section">
+      <mat-form-field class="full-width">
+        <mat-label>Select Customer</mat-label>
+        <mat-select [(ngModel)]="selectedCustomerId">
+          <mat-option *ngFor="let customer of customers" [value]="customer.id">
+            {{ customer.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Select Product</mat-label>
+        <mat-select [(ngModel)]="selectedProductId">
+          <mat-option *ngFor="let product of products" [value]="product.id">
+            {{ product.itemName }} - ₹{{ product.price }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Quantity</mat-label>
+        <input matInput type="number" [(ngModel)]="quantity" min="1">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="addItem()">Add Item</button>
+    </div>
+
+    <div class="sale-summary" *ngIf="saleItems.length > 0">
+      <h3>Sale Summary</h3>
+      <table class="summary-table">
+        <tr>
+          <th>Product</th>
+          <th>Qty</th>
+          <th>Price</th>
+        </tr>
+        <tr *ngFor="let item of saleItems">
+          <td>{{ item.product.itemName }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>₹{{ item.product.price * item.quantity }}</td>
+        </tr>
+      </table>
+
+      <h3>Total: ₹{{ total }}</h3>
+
+      <button mat-raised-button color="accent" (click)="completeSale()">Complete Sale</button>
+    </div>
+
+    <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
+  </mat-card>
+</div>

@@ -1,0 +1,15 @@
+.view-products-container {
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #1976d2;
+}

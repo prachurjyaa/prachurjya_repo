@@ -1,0 +1,18 @@
+<mat-sidenav-container class="app-container">
+  <mat-sidenav #sidenav mode="side" opened>
+    <app-navbar></app-navbar> <!-- Sidebar content -->
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>SmartBiz Application</span>
+    </mat-toolbar>
+
+    <div class="main-content">
+      <router-outlet></router-outlet> <!-- Loads components based on route -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

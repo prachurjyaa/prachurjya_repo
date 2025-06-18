@@ -1,0 +1,14 @@
+<div class="chatbot-container">
+  <h2>SmartBiz AI Assistant</h2>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Ask a question</mat-label>
+    <input matInput [(ngModel)]="question" placeholder="e.g. How to add a sale?">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="askAI()">Ask</button>
+
+  <div *ngIf="response" class="response-box">
+    <strong>AI:</strong> {{ response }}
+  </div>
+</div>

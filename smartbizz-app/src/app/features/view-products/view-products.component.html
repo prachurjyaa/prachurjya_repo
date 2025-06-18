@@ -1,0 +1,41 @@
+<div class="view-products-container">
+  <h2>Product Inventory</h2>
+
+  <!-- 🔍 Search Input -->
+  <mat-form-field class="full-width">
+    <mat-label>Search Products</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Type to filter...">
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let product">{{ product.id }}</td>
+    </ng-container>
+
+    <!-- Item Name Column -->
+    <ng-container matColumnDef="itemName">
+      <th mat-header-cell *matHeaderCellDef>Item Name</th>
+      <td mat-cell *matCellDef="let product">{{ product.itemName }}</td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price (₹)</th>
+      <td mat-cell *matCellDef="let product">₹{{ product.price }}</td>
+    </ng-container>
+
+    <!-- Stock Quantity Column -->
+    <ng-container matColumnDef="stockQuantity">
+      <th mat-header-cell *matHeaderCellDef>Stock</th>
+      <td mat-cell *matCellDef="let product">{{ product.stockQuantity }}</td>
+    </ng-container>
+
+    <!-- Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>

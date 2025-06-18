@@ -1,0 +1,13 @@
+mat-nav-list {
+  width: 200px;
+  padding-top: 20px;
+}
+
+mat-list-item {
+  font-weight: 600;
+}
+
+a.mat-list-item:hover {
+  background-color: #e0f7fa;
+  color: #01579b;
+}

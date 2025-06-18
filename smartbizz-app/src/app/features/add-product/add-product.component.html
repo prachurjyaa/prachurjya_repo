@@ -1,0 +1,28 @@
+<div class="add-product-container">
+  <mat-card>
+    <mat-card-title>Add New Product</mat-card-title>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <mat-label>Item Name</mat-label>
+        <input matInput name="itemName" [(ngModel)]="product.itemName" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Price (₹)</mat-label>
+        <input matInput name="price" [(ngModel)]="product.price" type="number" required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Stock Quantity</mat-label>
+        <input matInput name="stockQuantity" [(ngModel)]="product.stockQuantity" type="number" required>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Add</button>
+      </div>
+
+      <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
+    </form>
+  </mat-card>
+</div>
